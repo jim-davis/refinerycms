@@ -8,13 +8,13 @@ This guide covers getting up and running with Refinery CMS. After reading it, yo
 
 endprologue.
 
-WARNING. This guide is based on Refinery CMS 2.1.0 so some of the code shown here may not work in earlier versions of Refinery.
+WARNING. The initial version of this guide was based on Refinery CMS 2.1.0. It has been updated for Refinery 3.0.0, but these updates are subject to further review and editing.
 
 h3. Guide Assumptions
 
 This guide is designed for beginners who want to get started with a Refinery CMS site from scratch. It does not assume that you have any prior experience with Refinery. However, to get the most out of it, you need to have some prerequisites installed:
 
-* The "Ruby":http://www.ruby-lang.org/en/downloads language version 1.9.3 or higher
+* The "Ruby":http://www.ruby-lang.org/en/downloads language version at least 2
 * A working installation of the "SQLite3 Database":http://www.sqlite.org
 * A working installation of "ImageMagick":http://www.imagemagick.org/script/install-source.php
 
@@ -83,8 +83,6 @@ $ gem install refinerycms
 
 NOTE: This step may take some time to load as it needs to download and install all the ruby gems Refinery depends on.
 
-NOTE: If +gem install refinerycms+ fails with an error message saying +ERROR:  While executing gem ... (Gem::ImpossibleDependenciesError)+, run +gem install rails -v=3.2.15+ then +gem install refinerycms+
-
 TIP. If you're working on Windows, you should be aware that the vast majority of Refinery development is done in Unix environments. If at all possible, we suggest that you develop on a Linux based operating system.
 
 h5. Rails Application Templates
@@ -92,16 +90,10 @@ h5. Rails Application Templates
 These application templates are another very easy way to install Refinery, and allow for a great deal of control of your installation. You can create a new Refinery application by typing:
 
 <shell>
-$ rails new rickrockstar -m http://refinerycms.com/t/2.1.0
+$ rails new rickrockstar -m http://refinerycms.com/t/3.0.0
 </shell>
 
-TIP. As *the latest stable version of Refinery CMS is not compatible with Rails 4* you may also need to specify the Rails version in case you are not using an RVM gemset:
-
-<shell>
-$ rails _3.2.15_ new rickrockstar -m http://refinerycms.com/t/2.1.0
-</shell>
-
-TIP. If you want to create a Rails 4 application with refinerycms, you'll have to use the edge version. This works with Rails 4.2.3:
+TIP.  If you wish to to use the edge version, try
 
 <shell>
 $ rails new rickrockstar -m http://refinerycms.com/t/edge
@@ -112,6 +104,8 @@ WARNING. If you create an application from the template, be sure to skip running
 h4. Creating a Refinery application
 
 The best way to use this guide is to follow each step as it happens. No code or step needed to make this example application has been left out, so you can literally follow along step-by-step.
+
+TIP.  These instructions do not work at present (22 Dec 2015) because this method downloads an incompatible version of refinerycms-acts-as-indexed.  
 
 To begin, open a terminal, navigate to a folder where you have rights to create files, and type:
 
